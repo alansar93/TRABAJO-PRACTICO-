@@ -1,0 +1,13 @@
+#opciones-del-usuario {
+    display: grid;
+    place-content: center;
+    margin: 10px;
+}
+
+#detalle-usuario-eleccion{
+    display: grid;
+    place-content: center;
+    background-color: rgb(136, 133, 133);
+    margin-left: 15px;
+    margin-right: 15px;
+}

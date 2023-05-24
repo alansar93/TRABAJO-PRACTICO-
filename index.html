@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo Practico</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div id="opciones-del-usuario">
+    <h1>Supermercado Los Devs</h1>
+<div><label for="cantidad-prodcutos-mostrar">Cantidad de productos a mostrar:</label>
+    <select name="" id="cantidad-prodcutos-mostrar">
+        <option value="1">1</option>
+        <option value="3">3</option>
+        <option value="7">7</option>
+        <option value="10">10</option>
+    </select></div>
+
+<div><label for="cantidad-permitida-producto">Cantidad permitida por cada producto:</label>
+    <select name="" id="cantidad-permitida-producto">
+        <option value="1">1</option>
+        <option value="15">15</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+    </select></div>
+
+<div><label for="colores">Colores:</label>
+    <select name="" id="colores">
+        <option value="Ninungo">Ninguno</option>
+        <option value="Rojo-Amarillo">Rojo-Amarillo</option>
+        <option value="Verde-Violeta">Verde-Violeta</option>
+        <option value="Azul-Gris">Azul-Gris</option>
+    </select>
+</div>
+<button onclick="opcionesUsuario()">Generar</button>
+</div>
+
+<p id="detalle-usuario-eleccion"></p>
+
+
+    <script src="algoritmo.js"></script>
+</body>
+</html>
