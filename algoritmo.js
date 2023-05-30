@@ -9,17 +9,25 @@ const pParrafoInfo = document.querySelector("#detalle-usuario-eleccion")
 
 
 
-
+//* Esta funcion, pone el texto que elige el usuario*//
 function opcionesUsuario() {
     let cantidadElegidaUsuario = cantidadMostrar.value
     let cantidadPermitidaElegidaUsuario = cantidadPermitidaComprar.value
     let coloresElegidoUsuario = coloresUsuario.value
+      
     
-
     pParrafoInfo.innerHTML = "La cantidad de prodcutos a mostrar es: " + cantidadElegidaUsuario + "<br>" +
-        "La cantidad de prodcutos permitidos por compra es: " + cantidadPermitidaElegidaUsuario + "<br>" +
+    "La cantidad de prodcutos permitidos por compra es: " + cantidadPermitidaElegidaUsuario + "<br>" +
         "Los colores selecciones a usar son: " + coloresElegidoUsuario
  
-    cantidadPermitidaComprar.innerHTML = cantidadElegidaUsuario
+     for (let i = 1; i <= cantidadPermitidaElegidaUsuario; i++) {
+        cantProdElegido.innerHTML += `<option value="${i}"> ${i} </option>`
+
+     }
     
     }
+
+
+
+         
+    
