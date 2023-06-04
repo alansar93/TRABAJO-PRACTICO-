@@ -6,7 +6,7 @@ const cadaProductoImg = document.querySelector("fieldset");
 const cantProdElegido = document.querySelector("#cantidad-producto-elegida");
 const pParrafoInfo = document.querySelector("#detalle-usuario-eleccion");
 const productosMostrar = document.querySelector("#productos-mostrar");
-
+const productosComprar = document.querySelector("#productos-comprar");
 
 
 img1 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStJXyUIXxGgZqpm3CDxnrMErDGd2QIua1oXw&usqp=CAU";
@@ -21,7 +21,7 @@ img9 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLaW2dDa34KE0Eqcvn
 img10 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfjeVQIFHNsJ2CoLR_UPu97YFigY3jF-5zxw&usqp=CAU"
 
 const imagenesVector = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
-
+const ProductosAComprar = [];
 
 
 
@@ -36,39 +36,50 @@ function opcionesUsuario() {
    let coloresElegidoUsuario = coloresUsuario.value
    let cantidadPermitidaElegidaUsuario = cantidadPermitidaComprar.value
 
-
-   cantProdElegido.innerHTML = `<option value=""> 1 </option>`
-   MostrarProducto.innerHTML = ""
+  
+  
    
-   nuevafuncion();
-   function nuevafuncion() {
-      for (let i = 2; i < cantidadPermitidaComprar.value; i++) {
-         cantProdElegido.innerHTML += `<option value="${i}">"${i}"</option>`;
-      };
-   }
+
    pParrafoInfo.innerHTML = "La cantidad de prodcutos a mostrar es: " + cantidadElegidaUsuario + "<br>" +
       "La cantidad de prodcutos permitidos por compra es: " + cantidadPermitidaElegidaUsuario + "<br>" +
       "Los colores selecciones a usar son: " + coloresElegidoUsuario
 
+ MostrarProducto.innerHTML = ""; // limpia productos anteriores
 
+ /**
+  * funcion para aparezca la cantidad de prodcutos y cantidad de prodcutos a comprar
+  */
+ for (let i = 0; i < cantidadElegidaUsuario; i++) {
+   const productoHTML = `
+      <p>Producto ${i + 1}</p>
+      <img src="${imagenesVector[i]}" alt="Imagen producto">
+      <label>Seleccione pago</label>
+      <select class="select-pago">
+         <option value="efectivo">Efectivo</option>
+         <option value="debito">Debito</option>
+         <option value="credito">Credito</option>
+      </select>
+      <label>Seleccione Cantidades</label>
+      <select class="select-cantidad">
+         ${generarOpcionesCantidad(cantidadPermitidaElegidaUsuario)}
+      </select>
+      <button class="btn-comprar">Comprar</button>
+   `;
+   MostrarProducto.innerHTML += productoHTML;
+}
 
-   for (let i = 0; i < cantidadElegidaUsuario; i++) {
-      MostrarProducto.innerHTML += `<p>Producto ${i + 1}</p>
-      <img id="" src="${imagenesVector[i]}" alt=""></img>
-   <label>Seleccione pago</label>
-   <select name="" id="UsuarioEligioCantidad">
-       <option value="efectivo">Efectivo</option>
-       <option value="debito">Debito</option>
-       <option value="credito">Credito</option>
-   </select>
-   <label for="cantidad-producto-elegida">Seleccione Cantidades</label>
-        <select name="" id="cantidad-producto-elegida">
-         ${nuevafuncion()}     
-        </select>
-   <button>Comprar</button>`
+/**
+ * 
+ * @param {cantidad de productos a comprar} cantidadPermitida 
+ * @returns 
+ */
+function generarOpcionesCantidad(cantidadPermitida) {
+   let opcionesHTML = '';
+   for (let i = 1; i <= cantidadPermitida; i++) {
+      opcionesHTML += `<option value="${i}">${i}</option>`;
    }
-
-
+   return opcionesHTML;
+}
 
 }
 
