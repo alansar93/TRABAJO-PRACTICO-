@@ -20,9 +20,16 @@ img8 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhD8JVNMXcYGGy021I
 img9 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLaW2dDa34KE0Eqcvnu-YPf8mtv80Bhw7VDg&usqp=CAU"
 img10 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfjeVQIFHNsJ2CoLR_UPu97YFigY3jF-5zxw&usqp=CAU"
 
+let ninguno = "none";
+let rojo = "red";
+let amarillo = "yellow";
+let  verde = "green";
+let azul = "blue";
+let gris = "grey";
+
 const imagenesVector = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
 const ProductosAComprar = [];
-
+const colorVariable = [ninguno, rojo, amarillo, verde, azul, gris];
 
 
 
@@ -51,8 +58,9 @@ function opcionesUsuario() {
   */
  for (let i = 0; i < cantidadElegidaUsuario; i++) {
    const productoHTML = `
-      <p>Producto ${i + 1}</p>
-      <img src="${imagenesVector[i]}" alt="Imagen producto">
+   <div id="cada-producto">
+   <p>Producto ${i + 1}</p>
+      <img id=${i} src="${imagenesVector[i]}" alt="Imagen producto">
       <label>Seleccione pago</label>
       <select class="select-pago">
          <option value="efectivo">Efectivo</option>
@@ -64,6 +72,7 @@ function opcionesUsuario() {
          ${generarOpcionesCantidad(cantidadPermitidaElegidaUsuario)}
       </select>
       <button class="btn-comprar">Comprar</button>
+      </div>
    `;
    MostrarProducto.innerHTML += productoHTML;
 }
@@ -80,6 +89,7 @@ function generarOpcionesCantidad(cantidadPermitida) {
    }
    return opcionesHTML;
 }
+
 
 }
 
