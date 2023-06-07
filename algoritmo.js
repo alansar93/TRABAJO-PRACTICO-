@@ -23,7 +23,7 @@ img10 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfjeVQIFHNsJ2CoLR
 let ninguno = "none";
 let rojo = "red";
 let amarillo = "yellow";
-let  verde = "green";
+let verde = "green";
 let azul = "blue";
 let gris = "grey";
 
@@ -36,62 +36,74 @@ const colorVariable = [ninguno, rojo, amarillo, verde, azul, gris];
 
 
 
-
 //* Esta funcion, pone el texto que elige el usuario*//
 function opcionesUsuario() {
    let cantidadElegidaUsuario = cantidadMostrar.value
    let coloresElegidoUsuario = coloresUsuario.value
    let cantidadPermitidaElegidaUsuario = cantidadPermitidaComprar.value
 
-  
-  
-   
+
+
+
 
    pParrafoInfo.innerHTML = "La cantidad de prodcutos a mostrar es: " + cantidadElegidaUsuario + "<br>" +
       "La cantidad de prodcutos permitidos por compra es: " + cantidadPermitidaElegidaUsuario + "<br>" +
       "Los colores selecciones a usar son: " + coloresElegidoUsuario
 
- MostrarProducto.innerHTML = ""; // limpia productos anteriores
-
- /**
-  * funcion para aparezca la cantidad de prodcutos y cantidad de prodcutos a comprar
-  */
- for (let i = 0; i < cantidadElegidaUsuario; i++) {
-   const productoHTML = `
-   <div id="cada-producto">
+      MostrarProducto.innerHTML = ""; // limpia productos anteriores
+      
+      /**
+       * funcion para aparezca la cantidad de prodcutos y cantidad de prodcutos a comprar
+      */
+     for (let i = 0; i < cantidadElegidaUsuario; i++) {
+      const division = `<div id="cada-producto ${i}">`
+      const productoHTML = `
+   ${division}
+   <fieldset>
    <p>Producto ${i + 1}</p>
       <img id=${i} src="${imagenesVector[i]}" alt="Imagen producto">
-      <label>Seleccione pago</label>
+      <div>
+      <label>Seleccione Pago</label>
       <select class="select-pago">
          <option value="efectivo">Efectivo</option>
          <option value="debito">Debito</option>
          <option value="credito">Credito</option>
       </select>
+      </div>
+      <div>
       <label>Seleccione Cantidades</label>
       <select class="select-cantidad">
+      </div>
          ${generarOpcionesCantidad(cantidadPermitidaElegidaUsuario)}
       </select>
       <button class="btn-comprar">Comprar</button>
+      </fieldset>
       </div>
    `;
-   MostrarProducto.innerHTML += productoHTML;
-}
-
-/**
- * 
- * @param {cantidad de productos a comprar} cantidadPermitida 
- * @returns 
- */
-function generarOpcionesCantidad(cantidadPermitida) {
-   let opcionesHTML = '';
-   for (let i = 1; i <= cantidadPermitida; i++) {
-      opcionesHTML += `<option value="${i}">${i}</option>`;
+      MostrarProducto.innerHTML += productoHTML;
    }
-   return opcionesHTML;
+
+   /**
+    * 
+    * @param {cantidad de productos a comprar} cantidadPermitida 
+    * @returns 
+    */
+   function generarOpcionesCantidad(cantidadPermitida) {
+      let opcionesHTML = '';
+      for (let i = 1; i <= cantidadPermitida; i++) {
+         opcionesHTML += `<option value="${i}">${i}</option>`;
+      }
+      return opcionesHTML;
+   }
+
+         
+     
+       
+   
+   
+
 }
 
-
-}
 
 
 

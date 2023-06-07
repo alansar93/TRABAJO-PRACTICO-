@@ -5,12 +5,12 @@
 }
 
 #detalle-usuario-eleccion {
-    display: flex;
+    display: grid;
+    place-content: center;
     background-color: rgb(174, 218, 243);
     width: 500px;
-    margin-left: 370px;
-    color: rgba(226, 134, 106, 0.699);
-    place-content: center;
+    margin-left: 700px;
+    color: rgba(59, 35, 28, 0.699);
     border-radius: 7px;
 }
 
@@ -23,10 +23,28 @@ img {
 #producto-muestra {
     display: flex;
     width: 20px;
-    
+
 }
 
 #cada-producto {
     display: inline;
 }
 
+#rojo {
+    background-color: red;
+}
+
+#amarillo {
+    background-color: yellow;
+}
+
+p{
+    font-family: monospace;
+    color: black;
+    font-size: large;
+}
+
+#producto-muestra{
+    font-family: monospace;
+    font-size: small;
+}
