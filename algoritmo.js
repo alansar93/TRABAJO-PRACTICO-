@@ -7,7 +7,7 @@ const cantProdElegido = document.querySelector("#cantidad-producto-elegida");
 const pParrafoInfo = document.querySelector("#detalle-usuario-eleccion");
 const productosMostrar = document.querySelector("#productos-mostrar");
 const productosComprar = document.querySelector("#productos-comprar");
-
+const fieldset = document.querySelector("fieldset");
 
 img1 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStJXyUIXxGgZqpm3CDxnrMErDGd2QIua1oXw&usqp=CAU";
 img2 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPBHUY1qzp0Twh9WXASuwrfOITM1FF3Voe-w&usqp=CAU"
@@ -20,12 +20,12 @@ img8 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhD8JVNMXcYGGy021I
 img9 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLaW2dDa34KE0Eqcvnu-YPf8mtv80Bhw7VDg&usqp=CAU"
 img10 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfjeVQIFHNsJ2CoLR_UPu97YFigY3jF-5zxw&usqp=CAU"
 
-let ninguno = "none";
-let rojo = "red";
-let amarillo = "yellow";
-let verde = "green";
-let azul = "blue";
-let gris = "grey";
+ninguno = "none";
+rojo = "red";
+amarillo = "yellow";
+verde = "green";
+azul = "blue";
+gris = "grey";
 
 const imagenesVector = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
 const ProductosAComprar = [];
@@ -50,12 +50,12 @@ function opcionesUsuario() {
       "La cantidad de prodcutos permitidos por compra es: " + cantidadPermitidaElegidaUsuario + "<br>" +
       "Los colores selecciones a usar son: " + coloresElegidoUsuario
 
-      MostrarProducto.innerHTML = ""; // limpia productos anteriores
-      
-      /**
-       * funcion para aparezca la cantidad de prodcutos y cantidad de prodcutos a comprar
-      */
-     for (let i = 0; i < cantidadElegidaUsuario; i++) {
+   MostrarProducto.innerHTML = ""; // limpia productos anteriores
+
+   /**
+    * funcion para aparezca la cantidad de prodcutos y cantidad de prodcutos a comprar
+   */
+   for (let i = 0; i < cantidadElegidaUsuario; i++) {
       const division = `<div id="cada-producto ${i}">`
       const productoHTML = `
    ${division}
@@ -80,7 +80,7 @@ function opcionesUsuario() {
       </fieldset>
       </div>
    `;
-      MostrarProducto.innerHTML += productoHTML;
+      
    }
 
    /**
@@ -96,13 +96,16 @@ function opcionesUsuario() {
       return opcionesHTML;
    }
 
-         
-     
-       
-   
    
 
+
+
+
+
 }
+
+
+
 
 
 
