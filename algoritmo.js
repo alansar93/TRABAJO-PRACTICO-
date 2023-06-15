@@ -51,7 +51,9 @@ function opcionesUsuario() {
   */
  for (let i = 0; i < cantidadElegidaUsuario; i++) {
    const productoHTML = `
-      <p>Producto ${i + 1}</p>
+   <div>
+   <fieldset>  
+   <p>Producto ${i + 1}</p>
       <img src="${imagenesVector[i]}" alt="Imagen producto">
       <label>Seleccione pago</label>
       <select class="select-pago">
@@ -64,7 +66,10 @@ function opcionesUsuario() {
          ${generarOpcionesCantidad(cantidadPermitidaElegidaUsuario)}
       </select>
       <button class="btn-comprar">Comprar</button>
-   `;
+      </div>
+      </fieldset>
+      `;
+   
    MostrarProducto.innerHTML += productoHTML;
 }
 
