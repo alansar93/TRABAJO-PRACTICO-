@@ -52,32 +52,56 @@ function opcionesUsuario() {
 
    MostrarProducto.innerHTML = ""; // limpia productos anteriores
 
- /**
-  * funcion para aparezca la cantidad de prodcutos y cantidad de prodcutos a comprar
-  */
- for (let i = 0; i < cantidadElegidaUsuario; i++) {
-   const productoHTML = `
-   <fieldset>
-      <p>Producto ${i + 1}</p>
-      <img src="${imagenesVector[i]}" alt="Imagen producto">
-      <label>Seleccione pago</label>
-      <select class="select-pago">
-         <option value="efectivo">Efectivo</option>
-         <option value="debito">Debito</option>
-         <option value="credito">Credito</option>
-      </select>
+   /**
+    * funcion para aparezca la cantidad de prodcutos y cantidad de prodcutos a comprar
+    */
+   /* for (let i = 0; i < cantidadElegidaUsuario; i++) {
+     const productoHTML = `
+     <div>
+        <p>Producto ${i + 1}</p>
+        <img src="${imagenesVector[i]}" alt="Imagen producto">
+        <label>Seleccione pago</label>
+        <select class="select-pago">
+           <option value="efectivo">Efectivo</option>
+           <option value="debito">Debito</option>
+           <option value="credito">Credito</option>
+        </select>
+        <div>
+        <label>Seleccione Cantidades</label>
+        <select class="select-cantidad">
+        </div>
+        <div>
+           ${generarOpcionesCantidad(cantidadPermitidaElegidaUsuario)}
+        </select>
+        <button class="btn-comprar">Comprar</button>
+        </div>
+     </div>
+     `;
+     MostrarProducto.innerHTML += productoHTML;
+  } */
+
+   for (let i = 0; i < cantidadElegidaUsuario; i++) {
+      const productoHTML = `
+      <div class="card">
+         <img src="${imagenesVector[i]}" class="card-img-top" alt="Imagen producto">
+         <div class="card-body">
+            <h5 class="card-title">Producto ${i + 1}</h5>
+            <label>Seleccione pago</label>
+         <select class="select-pago">
+            <option value="efectivo">Efectivo</option>
+            <option value="debito">Debito</option>
+            <option value="credito">Credito</option>
+         </select>
+         <label>Seleccione Cantidades</label>
+            <select class="select-cantidad">
+               ${generarOpcionesCantidad(cantidadPermitidaElegidaUsuario)}
+            </select>
+            <a href="#" class="btn btn-primary">Comprar</a>
+         </div>
       </div>
-      <div>
-      <label>Seleccione Cantidades</label>
-      <select class="select-cantidad">
-      </div>
-         ${generarOpcionesCantidad(cantidadPermitidaElegidaUsuario)}
-      </select>
-      <button class="btn-comprar">Comprar</button>
-      </fieldset>
-   `;
-   MostrarProducto.innerHTML += productoHTML;
-}
+         `;
+      MostrarProducto.innerHTML += productoHTML;
+   }
 
    /**
     * 
@@ -92,7 +116,7 @@ function opcionesUsuario() {
       return opcionesHTML;
    }
 
-   
+
 
 
 

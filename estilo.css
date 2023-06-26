@@ -20,39 +20,14 @@ body {
 }
 
 
-img {
-    width: 100px;
-    margin-left: 20px;
-}
+
 
 #producto-muestra {
     display: flex;
-    width: 20px;
+     width: 50vw;
 
 }
 
-#cada-producto {
-    display: inline;
-}
-
-#rojo {
-    background-color: red;
-}
-
-#amarillo {
-    background-color: yellow;
-}
-
-p {
-    font-family: monospace;
-    color: black;
-    font-size: large;
-}
-
-#producto-muestra {
-    font-family: monospace;
-    font-size: small;
-  }
 
 h1{
     color: green;
